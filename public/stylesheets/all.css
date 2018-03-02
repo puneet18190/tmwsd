@@ -1,0 +1,186 @@
+/*------------------------------------*\
+  RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0b1 | 201101
+   NOTE:WORK IN PROGRESS
+   USE WITH CAUTION AND TEST WITH ABANDON */
+
+html,body,div,span,applet,object,iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+a,abbr,acronym,address,big,cite,code,
+del,dfn,em,img,ins,kbd,q,s,samp,
+small,strike,strong,sub,sup,tt,var,
+b,u,i,center,
+dl,dt,dd,ol,ul,li,
+fieldset,form,label,legend,
+table,caption,tbody,tfoot,thead,tr,th,td,
+article,aside,canvas,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section,summary,
+time,mark,audio,video{
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+/*  font:inherit;*/
+  vertical-align:baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section{
+  display:block;
+}
+body{
+  line-height:1;
+}
+ol,ul{
+  list-style:none;
+}
+blockquote,q{
+  quotes:none;
+}
+blockquote:before,blockquote:after,
+q:before,q:after{
+  content:'';
+  content:none;
+}
+/* remember to define visible focus styles!
+:focus{
+  outline:?????;
+} */
+
+/* remember to highlight inserts somehow! */
+ins{
+  text-decoration:none;
+}
+del{
+  text-decoration:line-through;
+}
+
+table{
+  border-collapse:collapse;
+  border-spacing:0;
+}
+
+
+* { font-family: Helvetica, arial, sans-serif; }
+.clear:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+* html .clear { zoom: 1; } /* IE6 */
+*:first-child+html .clear { zoom: 1; } /* IE7 */
+
+body { padding-bottom: 30px; min-width: 600px; }
+h1 { width: 95%; margin: 50px auto 20px; font-size: 400%; position: relative; }
+h1 a.logo { border: 0; color: #000; }
+h1 a.logo:visited,
+h1 a.logo:hover { color: #000; }
+#nav { position: absolute; right: 0; bottom: 10px; font-size: 0.2em; font-weight: normal; }
+#nav a { display: inline-block; margin: 0 3px; }
+
+a { color: #069cca; text-decoration: none; border-bottom: 1px dotted #069cca; }
+a:visited, a.visited { color: #037fa5; border-color: #037fa5; }
+a:hover, a.hover { color: #04b0e4; border-color: #04b0e4; }
+
+#content { border: 4px solid #000; border-width: 4px 0; width: 95%; margin: 0 auto; padding: 20px 0; }
+
+pre { font-family: Menlo, "Courier New", Courier, monospace; font-size: 0.8em; white-space: pre-wrap; line-height: 1.4em; overflow: auto; }
+
+.flash { width: 95%; margin: 0 auto; background: #000; color: #fff; }
+.flash span { padding: 10px 10px 6px; display: inline-block; text-transform: uppercase; }
+
+table { border-collapse: separate; border-spacing: 0; margin: 0 auto; width: 100%; }
+table th,
+table td { text-align: center; font-size: 14px; line-height: 2em; vertical-align: middle; background: #fff; padding: 4px 10px; }
+thead th { position: relative; border: 1px solid #000; border-width: 0 0 2px; line-height: 1.4em; }
+tbody td { border-top: 1px solid #ccc; border-left: 1px solid #000; }
+tbody tr:first-child td { border-top: 2px solid #000; }
+tbody td:first-child { text-align: left; border-left: 0; }
+tfoot td { border-top: 4px solid #000; }
+
+form { margin: 0 auto; position: relative; }
+
+.field_with_errors { margin: 10px 0; }
+.field_with_errors .error { display: block; color: red; }
+
+.hint { display: block; margin-bottom: 5px; color: #ccc; margin-left: 20%; position: relative; left: 8px; }
+
+footer { width: 95%; margin: 40px auto 0; color: #aaa; text-align: right; font-size: 0.8em; line-height: 1.5; }
+footer a { color: #aaa; border-color: #aaa; }
+footer a:visited { color: #aaa; border-color: #aaa; }
+footer a:hover { color: #aaa; border-color: #aaa; }
+
+
+h1 { position: relative; }
+h1 #tagline { position: absolute; right: 0; bottom: 6px; font-size: 0.25em; text-transform: uppercase; color: #ccc; }
+h3 { font-size: 1.4em; margin-bottom: 10px; }
+p { line-height: 1.3em; margin: 1em 0; }
+li { line-height: 1.3em; list-style-type: square; margin: 1em 0 1em 20px; }
+tfoot { text-transform: uppercase; }
+#nav { bottom: 34px; }
+
+.zclip embed { position: absolute; top: 0; left: 0; }
+
+#tmwsd-description { margin-top: -10px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #000; font-size: 0.8em; text-align: center; }
+form#new_message .input.text label { display: none; }
+form#new_message textarea { width: 99%; height: 200px; font-size: 1em; margin-bottom: 10px; font-family: Menlo, "Courier New", Courier, monospace; }
+form#new_message input.button { font-size: 1.2em; margin-top: 20px; }
+form#new_message div.password { float: right; width: 60%; position: relative; }
+form#new_message div.password label { text-transform: uppercase; display: inline-block; width: 100px; height: 24px; padding-top: 4px; }
+form#new_message div.password input { position: absolute; left: 104px; right: 0; }
+form#new_message div.password .hint { font-size: 0.8em; margin-left: 0; left: 0; }
+
+form.user .input.string label { display: inline-block; width: 20%; font-size: 1.2em; text-align: right; padding-right: 8px; }
+form.user input.string { font-size: 1.2em; width: 75%; }
+form.user .input.boolean { margin-left: 20%; font-size: 1.2em; position: relative; left: 8px; }
+form.user input.button { margin: 20px 8px 0 20%; font-size: 1.2em; position: relative; left: 8px; }
+form.user h3 { border-bottom: 1px dotted #000; padding-bottom: 1em; margin-bottom: 1em; text-transform: uppercase; }
+form.user h4 { margin: 15px 0 5px 20%; position: relative; left: 8px; }
+#user-links { padding: 10px 0 6px; margin-top: 1em; margin-bottom: -20px; text-align: center; text-transform: uppercase; background: #000; color: #fff; }
+#user-links a { color: #fff; border-bottom: 1px dotted #fff; display: inline-block; margin: 0 5px; }
+
+.field_with_errors { margin: 10px 0; }
+.field_with_errors .error { display: block; margin-left: 20%; position: relative; left: 8px; color: red; }
+
+#message-list th,
+#message-list td { white-space: nowrap; }
+#message-list td.url { font-size: 1.2em; }
+#message-list .created,
+#message-list .last-access { text-align: left; }
+#message-list #message-pagination { text-align: left; }
+#message-list #message-pagination a { display: inline-block; padding: 3px 6px; background: #f5f5f5; border: 0; line-height: 1em; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; }
+#message-list #message-pagination a:visited { color: #069cca; }
+#message-list #message-pagination .disabled { color: #ccc; padding: 2px 5px; border: 1px solid #eee; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; }
+#message-list #message-pagination .current { padding: 3px 6px; color: #fff; background: #069cca; font-style: normal; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; }
+#message-list #new-message-link { text-align: right; }
+
+#message-info .copy { float: right; font-size: 0.5em; padding: 2px 8px; margin-top: 0.9em; background: #f5f5f5; border-bottom: 0; line-height: 2em; margin-left: 5px; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; }
+#message-info table label { display: none; }
+#message-info table .url { white-space: nowrap; }
+#message-info table .url,
+#message-info table .name,
+#message-info table .email { text-align: left; }
+#message-info table .delete { width: 60px; }
+#message-info td.url { font-size: 1.2em; color: #069cca; position: relative; }
+#message-info tr.deleted td { color: #aaa; }
+#message-info table .input.string { position: relative; width: 100%; min-width: 100px; height: 20px; }
+#message-info table .input.string input { position: absolute; top: -5px; right: -5px; bottom: -5px; left: -5px; }
+#message-info label { display: block; text-transform: uppercase; font-weight: bold; font-size: 0.8em; }
+#message-info input,
+#message-info textarea { font-size: 1.2em; }
+#message-info .input.text textarea { width: 99%; height: 60px; }
+#message-info #email-message { margin-top: 20px; }
+#message-info #message_submit { margin-top: 1em; }
+#message-info #no-urls { background: #f5f5f5; padding: 1em; text-align: center; font-size: 1em; }
+#message-info #message-deleted { text-align: center; }
+
+#authenticate-message p { margin-bottom: 1.5em; }
+#authenticate-message label { display: none; }
+#authenticate-message input { font-size: 1.2em; }
+
+#retrieved-message { width: 100%; margin: -20px 0; padding: 20px 0; }
+#message-actions { padding: 10px 0; border-top: 1px dotted #000; margin: 20px 0 -20px; text-align: center; font-size: 0.8em; }
+#message-actions a { cursor: pointer; }
+
+#about h3 { margin: 2em 0 1em; }
+#about h3:first-child { margin-top: 1em; }
+#about li { list-style-type: decimal; margin: 1em 0 1em 2em; }

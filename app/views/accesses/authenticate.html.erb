@@ -1,0 +1,8 @@
+<div id="authenticate-message">
+  <p>This message requires a password for access. Contact the sender if you don't already have the password.</p>
+  <%= form_tag short_path(@message_url) do -%>
+    <label for="password_field">Password:</label>
+    <span><%= password_field_tag :password, nil, :autofocus => true %></span>
+    <%= submit_tag "RETRIEVE MESSAGE" %>
+  <%- end -%>
+</div>

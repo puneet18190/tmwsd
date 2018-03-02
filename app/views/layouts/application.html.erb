@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>TMWSD. This Message Will Self-Destruct. Messages Deleted On Delivery.</title>
+    <%= csrf_meta_tag %>
+    <!-- <link rel="icon" type="image/png" href="/favicon.png"> -->
+    <%= stylesheet_link_tag "reset.css", "master.css", "tmwsd.css", :cache => true %>
+    <!--[if IE]>
+      <%= javascript_include_tag "http://html5shiv.googlecode.com/svn/trunk/html5.js" %>
+    <![endif]-->
+    <%= javascript_include_tag "jquery-1.6.2.min.js", "jquery.livequery.js",
+                               "jquery.zclip.min.js", "jquery.selecttext.js",
+                               "rails.js", "application.js", :cache => true %>
+    <%- if head = yield(:head) -%>
+      <%= head %>
+    <%- end -%>
+  </head>
+  <body>
+    <h1>
+      <%= link_to "TMWSD.", root_path, :class => "logo" %>
+      <span id="tagline">This Message Will Self-Destruct.</span>
+      <span id="nav">
+        <%= link_to "ABOUT", "/p/about" %>
+        <%- if user_signed_in? -%>
+          | <%= link_to "MESSAGES", messages_path %>
+          | <%= link_to "#{current_user.name.upcase}", edit_user_registration_path %>
+          | <%= link_to "SIGN OUT", destroy_user_session_path, :method => :delete %>
+        <%- else -%>
+          | <%= link_to "SIGN UP", new_user_registration_path %>
+          | <%= link_to "SIGN IN", new_user_session_path %>
+        <%- end -%>
+      </span>
+    </h1>
+    <%= render "layouts/flashes" %>
+    <section id="content">
+      <%= yield %>
+    </section>
+    <footer>
+      <p>
+        <strong>TMWSD.</strong>
+        Passing around secret plans of world domination.
+      </p>
+      <p>All the same: <%= link_to "thismessagewillselfdestruct.com", "https://thismessagewillselfdestruct.com" %>, <%= link_to "tmwsd.ws", "https://tmwsd.ws" %>, and <%= link_to "⌫.ws", "https://⌫.ws" %>. <%= link_to "Terms of Service", "/p/tos" %>.</p>
+    </footer>
+    <%- if Rails.env.production? -%>
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-34865716-1']);
+        _gaq.push(['_setDomainName', 'thismessagewillselfdestruct.com']);
+        _gaq.push(['_setAllowLinker', true]);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    <%- end -%>
+  </body>
+</html>

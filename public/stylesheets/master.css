@@ -1,0 +1,44 @@
+* { font-family: Helvetica, arial, sans-serif; }
+.clear:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+* html .clear { zoom: 1; } /* IE6 */
+*:first-child+html .clear { zoom: 1; } /* IE7 */
+
+body { padding-bottom: 30px; min-width: 600px; }
+h1 { width: 95%; margin: 50px auto 20px; font-size: 400%; position: relative; }
+h1 a.logo { border: 0; color: #000; }
+h1 a.logo:visited,
+h1 a.logo:hover { color: #000; }
+#nav { position: absolute; right: 0; bottom: 10px; font-size: 0.2em; font-weight: normal; }
+#nav a { display: inline-block; margin: 0 3px; }
+
+a { color: #069cca; text-decoration: none; border-bottom: 1px dotted #069cca; }
+a:visited, a.visited { color: #037fa5; border-color: #037fa5; }
+a:hover, a.hover { color: #04b0e4; border-color: #04b0e4; }
+
+#content { border: 4px solid #000; border-width: 4px 0; width: 95%; margin: 0 auto; padding: 20px 0; }
+
+pre { font-family: Menlo, "Courier New", Courier, monospace; font-size: 0.8em; white-space: pre-wrap; line-height: 1.4em; overflow: auto; }
+
+.flash { width: 95%; margin: 0 auto; background: #000; color: #fff; }
+.flash span { padding: 10px 10px 6px; display: inline-block; text-transform: uppercase; }
+
+table { border-collapse: separate; border-spacing: 0; margin: 0 auto; width: 100%; }
+table th,
+table td { text-align: center; font-size: 14px; line-height: 2em; vertical-align: middle; background: #fff; padding: 4px 10px; }
+thead th { position: relative; border: 1px solid #000; border-width: 0 0 2px; line-height: 1.4em; }
+tbody td { border-top: 1px solid #ccc; border-left: 1px solid #000; }
+tbody tr:first-child td { border-top: 2px solid #000; }
+tbody td:first-child { text-align: left; border-left: 0; }
+tfoot td { border-top: 4px solid #000; }
+
+form { margin: 0 auto; position: relative; }
+
+.field_with_errors { margin: 10px 0; }
+.field_with_errors .error { display: block; color: red; }
+
+.hint { display: block; margin-bottom: 5px; color: #ccc; margin-left: 20%; position: relative; left: 8px; }
+
+footer { width: 95%; margin: 40px auto 0; color: #aaa; text-align: right; font-size: 0.8em; line-height: 1.5; }
+footer a { color: #aaa; border-color: #aaa; }
+footer a:visited { color: #aaa; border-color: #aaa; }
+footer a:hover { color: #aaa; border-color: #aaa; }

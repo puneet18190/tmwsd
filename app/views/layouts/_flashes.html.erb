@@ -1,0 +1,5 @@
+<%- flash.keys.each do |f| -%>
+  <div class="flash" id="flash-<%= f %>">
+    <span><%= flash[f] %></span>
+  </div>
+<%- end -%>

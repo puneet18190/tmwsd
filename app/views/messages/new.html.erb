@@ -1,0 +1,9 @@
+<p id="tmwsd-description">TMWSD is a secure messaging service. Messages sent are encrypted, securely transferred, and automatically deleted when they are retrieved.</p>
+<%= simple_form_for @message do |f| -%>
+  <%= f.input :body, :as => :text, :required => true, :autofocus => true %>
+  <div id="extras">
+    <%= f.input :password, :required => false, :hint => "Optional. If set, your message will not be able to be retrieved without this password." %>
+    <%= f.input :terms_of_service, :as => :boolean, :required => true, :label => "I accept the #{link_to "terms of service", "/p/tos", :class => "tos", :rel => "facebox"}.".html_safe %>
+  </div>
+  <%= f.submit "SAVE THIS MESSAGE", :class => "button" %>
+<%- end -%>

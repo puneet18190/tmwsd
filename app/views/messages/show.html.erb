@@ -1,0 +1,108 @@
+<%- content_for :head do -%>
+  <%= javascript_include_tag "icanhaz.js" %>
+  <script type="text/html" charset="utf-8" id="template">
+    <tr>
+      <td class="url">
+        <a href="#" class="copy" rel="message_url_{{id}}">COPY</a>
+        <span id="message_url_{{id}}"><%= Tmwsd::Config[:protocol] || "https" %>://<%= Tmwsd::Config[:domain] %>/{{url}}</span>
+      </td>
+      <td>
+        <input class="hidden" name="message[message_urls_attributes][{{number}}][id]" type="hidden" value="{{id}}" />
+        <div class="input string optional">
+          <label class="string optional" for="message_message_urls_attributes_{{number}}_name">Name</label>
+          <input class="string optional" id="message_message_urls_attributes_{{number}}_name" maxlength="255" name="message[message_urls_attributes][{{number}}][name]" size="50" type="text" />
+        </div>
+      </td>
+      <td>
+        <div class="input string email optional">
+          <label class="email optional" for="message_message_urls_attributes_{{number}}_email">Email</label>
+          <input class="string email optional" id="message_message_urls_attributes_{{number}}_email" maxlength="255" name="message[message_urls_attributes][{{number}}][email]" size="50" type="email" />
+        </div>
+      </td>
+      <td class="status">ACTIVE</td>
+      <td class="delete">
+        <div class="input boolean optional">
+          <input name="message[message_urls_attributes][{{number}}][_destroy]" type="hidden" value="0" />
+          <input class="boolean optional" id="message_message_urls_attributes_{{number}}__destroy" name="message[message_urls_attributes][{{number}}][_destroy]" type="checkbox" value="1" />
+          <label class="boolean optional" for="message_message_urls_attributes_{{number}}__destroy">  destroy</label>
+        </div>
+      </td>
+    </tr>
+  </script>
+<%- end -%>
+<div id="message-info">
+  <p>Your message has been saved. Create as many URLs as you need to access this message (each one can only be used once). You can copy and deliver the URLs yourself or enter the recipients' names and email addresses and we'll send an email for you.</p>
+  <%= simple_form_for @message do |f| %>
+    <table>
+      <thead>
+        <tr>
+          <th class="url">URL</th>
+          <th class="name">Name</th>
+          <th class="email">Email</th>
+          <th class="status">Status</th>
+          <th class="delete">Delete?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%- @message.message_urls.each do |message_url| -%>
+          <%= f.simple_fields_for :message_urls, message_url do |u| -%>
+            <tr class="<%= (message_url.deleted? && "deleted") || "" %>">
+              <td class="url">
+                <%= link_to "COPY", "#", :class => "copy", :rel => dom_id(message_url) unless message_url.deleted? %>
+                <span id="<%= dom_id(message_url) %>"><%= short_message_url(message_url) %></span>
+              </td>
+              <%- if message_url.deleted? || (message_url.valid? && message_url.name.present? && message_url.email.present?) -%>
+                <td class="name"><%= (message_url.name.present? && message_url.name) || "---" %></td>
+                <td class="email"><%= (message_url.email.present? && message_url.email) || "---" %></td>
+              <%- else -%>
+                <td><%= u.input :id, :as => :hidden %><%= u.input :name %></td>
+                <td><%= u.input :email %></td>
+              <%- end -%>
+              <td class="status">
+                <%- if message_url.deleted? -%>
+                  DELETED
+                <%- elsif message_url.valid? && message_url.name.present? && message_url.email.present? -%>
+                  SENT
+                <%- else -%>
+                  ACTIVE
+                <%- end -%>
+              </td>
+              <td class="delete">
+                <%- if message_url.deleted? -%>
+                  x
+                <%- else -%>
+                  <%= u.input :_destroy, :as => :boolean -%>
+                <%- end -%>
+              </td>
+            </tr>
+          <%- end -%>
+        <%- end -%>
+        <%- if @message.message_urls.empty? -%>
+          <tr>
+            <td id="no-urls" colspan="5">There are no URLs for this message.</td>
+          </tr>
+        <%- end -%>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="5">
+            <%- if !@message.deleted? -%>
+              <%= link_to "Add a New URL", message_message_urls_path(@message),
+                                           :remote => true,
+                                           :method => :post,
+                                           :id     => "new-message-url" %>
+            <%- end -%>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+    <%- if @message.deleted? -%>
+      <p id="message-deleted">This message has been deleted.</p>
+    <%- else -%>
+      <div id="email-message">
+        <%= f.input :note, :as => :text, :required => false, :label => "Note (optional)", :hint => "This note will be included in the email sent to the recipients." %>
+        <%= f.submit "SAVE THIS MESSAGE" %>
+      </div>
+    <%- end -%>
+  <%- end -%>
+</div>

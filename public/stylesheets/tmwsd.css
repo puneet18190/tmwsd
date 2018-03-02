@@ -1,0 +1,74 @@
+h1 { position: relative; }
+h1 #tagline { position: absolute; right: 0; bottom: 6px; font-size: 0.25em; text-transform: uppercase; color: #ccc; }
+h3 { font-size: 1.4em; margin-bottom: 10px; }
+p { line-height: 1.3em; margin: 1em 0; }
+li { line-height: 1.3em; list-style-type: square; margin: 1em 0 1em 20px; }
+tfoot { text-transform: uppercase; }
+#nav { bottom: 34px; }
+
+.zclip embed { position: absolute; top: 0; left: 0; }
+
+#tmwsd-description { margin-top: -10px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #000; font-size: 0.8em; text-align: center; }
+form#new_message .input.text label { display: none; }
+form#new_message textarea { width: 99%; height: 200px; font-size: 1em; margin-bottom: 10px; font-family: Menlo, "Courier New", Courier, monospace; }
+form#new_message input.button { font-size: 1.2em; margin-top: 20px; }
+form#new_message div.password { float: right; width: 60%; position: relative; }
+form#new_message div.password label { text-transform: uppercase; display: inline-block; width: 100px; height: 24px; padding-top: 4px; }
+form#new_message div.password input { position: absolute; left: 104px; right: 0; }
+form#new_message div.password .hint { font-size: 0.8em; margin-left: 0; left: 0; }
+
+form.user .input.string label { display: inline-block; width: 20%; font-size: 1.2em; text-align: right; padding-right: 8px; }
+form.user input.string { font-size: 1.2em; width: 75%; }
+form.user .input.boolean { margin-left: 20%; font-size: 1.2em; position: relative; left: 8px; }
+form.user input.button { margin: 20px 8px 0 20%; font-size: 1.2em; position: relative; left: 8px; }
+form.user h3 { border-bottom: 1px dotted #000; padding-bottom: 1em; margin-bottom: 1em; text-transform: uppercase; }
+form.user h4 { margin: 15px 0 5px 20%; position: relative; left: 8px; }
+#user-links { padding: 10px 0 6px; margin-top: 1em; margin-bottom: -20px; text-align: center; text-transform: uppercase; background: #000; color: #fff; }
+#user-links a { color: #fff; border-bottom: 1px dotted #fff; display: inline-block; margin: 0 5px; }
+
+.field_with_errors { margin: 10px 0; }
+.field_with_errors .error { display: block; margin-left: 20%; position: relative; left: 8px; color: red; }
+
+#message-list th,
+#message-list td { white-space: nowrap; }
+#message-list td.url { font-size: 1.2em; }
+#message-list .created,
+#message-list .last-access { text-align: left; }
+#message-list #message-pagination { text-align: left; }
+#message-list #message-pagination a { display: inline-block; padding: 3px 6px; background: #f5f5f5; border: 0; line-height: 1em; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; }
+#message-list #message-pagination a:visited { color: #069cca; }
+#message-list #message-pagination .disabled { color: #ccc; padding: 2px 5px; border: 1px solid #eee; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; }
+#message-list #message-pagination .current { padding: 3px 6px; color: #fff; background: #069cca; font-style: normal; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; }
+#message-list #new-message-link { text-align: right; }
+
+#message-info .copy { float: right; font-size: 0.5em; padding: 2px 8px; margin-top: 0.9em; background: #f5f5f5; border-bottom: 0; line-height: 2em; margin-left: 5px; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; }
+#message-info table label { display: none; }
+#message-info table .url { white-space: nowrap; }
+#message-info table .url,
+#message-info table .name,
+#message-info table .email { text-align: left; }
+#message-info table .delete { width: 60px; }
+#message-info td.url { font-size: 1.2em; color: #069cca; position: relative; }
+#message-info tr.deleted td { color: #aaa; }
+#message-info table .input.string { position: relative; width: 100%; min-width: 100px; height: 20px; }
+#message-info table .input.string input { position: absolute; top: -5px; right: -5px; bottom: -5px; left: -5px; }
+#message-info label { display: block; text-transform: uppercase; font-weight: bold; font-size: 0.8em; }
+#message-info input,
+#message-info textarea { font-size: 1.2em; }
+#message-info .input.text textarea { width: 99%; height: 60px; }
+#message-info #email-message { margin-top: 20px; }
+#message-info #message_submit { margin-top: 1em; }
+#message-info #no-urls { background: #f5f5f5; padding: 1em; text-align: center; font-size: 1em; }
+#message-info #message-deleted { text-align: center; }
+
+#authenticate-message p { margin-bottom: 1.5em; }
+#authenticate-message label { display: none; }
+#authenticate-message input { font-size: 1.2em; }
+
+#retrieved-message { width: 100%; margin: -20px 0; padding: 20px 0; }
+#message-actions { padding: 10px 0; border-top: 1px dotted #000; margin: 20px 0 -20px; text-align: center; font-size: 0.8em; }
+#message-actions a { cursor: pointer; }
+
+#about h3 { margin: 2em 0 1em; }
+#about h3:first-child { margin-top: 1em; }
+#about li { list-style-type: decimal; margin: 1em 0 1em 2em; }

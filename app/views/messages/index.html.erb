@@ -1,0 +1,45 @@
+<div id="message-list">
+  <table>
+    <thead>
+      <tr>
+        <th class="url">URL</th>
+        <th class="created">Created</th>
+        <th class="last-access">Last Accessed</th>
+        <th class="urls">Recipients</th>
+        <th class="status">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%- @messages.each do |message| -%>
+        <tr class="<%= (message.deleted? && "deleted") || "" %>">
+          <td class="url">
+            <span id="<%= dom_id(message) %>">
+              <%= link_to message_url(message, :host => Tmwsd::Config[:domain], :protocol => Tmwsd::Config[:protocol]),
+                          message_url(message, :host => Tmwsd::Config[:domain], :protocol => Tmwsd::Config[:protocol]) %>
+            </span>
+          </td>
+          <td class="created"><%=raw message.created_at.to_s.sub(" ", "<br>") %></td>
+          <td class="last-access"><%=raw (message.last_accessed_at || "N/A").to_s.sub(" ", "<br>") %></td>
+          <td class="urls"><%= message.message_urls_count %></td>
+          <td class="status">
+            <%- if message.deleted? -%>
+              DELETED
+            <%- else -%>
+              ACTIVE
+            <%- end -%>
+          </td>
+        </tr>
+      <%- end -%>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td id="message-pagination" colspan="2">
+          <%= will_paginate(@messages) %>
+        </td>
+        <td id="new-message-link" colspan="3">
+          <%= link_to "Create New Message", new_message_path %>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

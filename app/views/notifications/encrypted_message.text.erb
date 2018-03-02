@@ -1,0 +1,29 @@
+- TMWSD. -------------------------------------------
+
+An encrypted, self-destructing message has been sent
+to you. Once you read the message it will be deleted
+and can not be recovered.
+
+URL:
+<%= short_url(@message_url) %>
+
+<%- if @message.requires_password? -%>
+Password:
+Please ask the sender for the password.
+
+<%- end -%>
+Note from Sender:
+<%- if @message.note.present? -%>
+<%= @message.note %>
+<%- else -%>
+The sender did not include a note.
+<%- end -%>
+
+----------------------------------------------------
+
+This Message Will Self-Destruct (TMWSD) is a free
+service for sending short, encrypted messages that
+are deleted upon retrieval. Usage of this service is
+bound by the terms of service found at:
+https://tmwsd.ws/p/tos. You can read more about this
+at: https://tmwsd.ws/p/about.
